@@ -83,9 +83,11 @@ function freeze(){
             containers[index + currentPosition].classList.add('taken');
         })
         currentPosition = 4;
-        random  =   Math.floor(Math.random() * tetro.length);
+        random = nextRandom;
+        nextRandom  =   Math.floor(Math.random() * tetro.length);
         present =   tetro[random][currentRotation];
         draw();
+        miniDisplay();
     }
 }
 
@@ -216,6 +218,6 @@ const miniTetro = [
 
 function miniDisplay(){
     miniSquares.forEach(index=>index.classList.remove('blue'));
-    miniTetro[0].forEach(index=>miniSquares[index].classList.add('blue'));
+    miniTetro[nextRandom].forEach(index=>miniSquares[index].classList.add('blue'));
 }
 miniDisplay();
