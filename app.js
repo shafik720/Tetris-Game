@@ -160,7 +160,13 @@ function rotation(){
         }else if(currentRotation == 0){
             currentRotation = 0;
         }
+        if(random == 2){
+            if(currentRotation == 0){
+                currentRotation = 3;
+            }
+        }
     }
     present =   tetro[random][currentRotation];
+    freezeWhileMoving();
     draw();
 }
