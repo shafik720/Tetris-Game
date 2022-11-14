@@ -1,12 +1,13 @@
 
 
 .tetris-parent{
-    border: 3px solid black;
+    border: 3px solid #002c2b;
     width : 200px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: unset;
+    background-color: #d9abff;
 }
 .tetris-parent div{
     width: 20px;
