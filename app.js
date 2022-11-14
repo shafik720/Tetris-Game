@@ -59,3 +59,17 @@ function draw(){
 
 // draw when the document is ready
 draw();
+
+//function for undrawing tetro pieces so that it will prevent left piece on display
+function undraw(){
+    present.some(index=>containers[index + currentPosition].classList.remove('blue'));
+}
+
+// setting interval to for moving down tetro pieces
+timer = setInterval(moveDown,300);
+
+function moveDown(){
+    undraw();
+    currentPosition += width;
+    draw();
+}
