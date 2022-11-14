@@ -146,7 +146,7 @@ function moveRight(){
     draw();
 }
 
-// function for rotating tetro
+//---------------- function for rotating tetro
 function rotation(){
     undraw();
     currentRotation++;
@@ -172,7 +172,7 @@ function rotation(){
     draw();
 }
 
-// fixing rotation bug
+//---------------- fixing rotation bug
 function isLeftEdge(){
     return present.some(index=>(index + currentPosition) % width === 0);
 }
@@ -196,3 +196,5 @@ function rotationBug(p){
         }
     }
 }
+
+//------------ mini display work
