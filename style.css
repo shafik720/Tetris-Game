@@ -16,3 +16,19 @@
 .blue{
     background-color: blue;
 }
+
+
+/* for mini display */
+.mini-grid{
+    border: 2px solid teal;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: unset;
+}
+
+.mini-grid div{
+    width: 20px;
+    height: 20px;
+}

@@ -198,3 +198,9 @@ function rotationBug(p){
 }
 
 //------------ mini display work
+let miniGrid = document.querySelector('.mini-grid'),
+miniSquares = Array.from(miniGrid.querySelectorAll('div'))
+;
+for(let i=0; i<miniSquares.length ; i++){
+    miniSquares[i].innerText = i;
+}
