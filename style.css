@@ -34,3 +34,28 @@
     margin: 0;
     padding: 0;
 }
+
+/* game start pause button  */
+/* .gamePauseBtn{
+    border: none;
+    outline
+} */
+
+.tetro-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.side-divs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+.gamePauseBtn{
+    width: 120px;
+    border: 2px solid teal !important;
+    font-weight: 700 !important;
+}
