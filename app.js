@@ -5,12 +5,12 @@ width = 10,
 timer,
 nextRandom = 0,
 currentRotation = 0,
-currentPosition = 0
+currentPosition = 4
 ;
 
-for(let i=0; i<containers.length ; i++){
-    containers[i].innerText = i;
-}
+// for(let i=0; i<containers.length ; i++){
+//     containers[i].innerText = i;
+// }
 
 // lTetromino 
 const lTetromino = [
@@ -51,3 +51,11 @@ const lTetromino = [
 let tetro   =   [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 let random  =   Math.floor(Math.random() * tetro.length);
 let present =   tetro[random][currentRotation];
+
+// function for drawing tetro in display
+function draw(){
+    present.some(index=>containers[index + currentPosition].classList.add('blue'));
+}
+
+// draw when the document is ready
+draw();
