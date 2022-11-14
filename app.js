@@ -222,12 +222,15 @@ miniDisplay();
 
 
 // game pause start function
+let gameButton = document.querySelector('.gamePauseBtn');
 function gamePause(){
     if(timer){
         clearInterval(timer);
         timer = null;
+        gameButton.innerText = 'Start Game';
     }else{
         // setting interval to for moving down tetro pieces
         timer = setInterval(moveDown,300);
+        gameButton.innerText = 'Pause Game';
     }
 }
