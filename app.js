@@ -112,7 +112,7 @@ function control(e){
     }else if(e.keyCode == 38){
         
     }else if(e.keyCode == 39){
-        
+        moveRight();
     }else if(e.keyCode == 40){
         moveDown();
     }
@@ -132,3 +132,16 @@ function moveLeft(){
     draw();
 }
 
+// function for moving tetro right
+function moveRight(){
+    undraw();
+    let isRight = present.some(index=>(currentPosition + index + 1) % width === 0);
+    if(!isRight){
+        currentPosition += 1;
+    }
+    if(present.some(index=>containers[currentPosition + index].classList.contains('taken'))){
+        currentPosition -= 1;
+    }
+    freezeWhileMoving();
+    draw();
+}
