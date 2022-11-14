@@ -89,6 +89,22 @@ function freeze(){
     }
 }
 
+// this function will freeze tetro while moving. It will also fix bug while moving left & right
+function freezeWhileMoving(){
+    if(present.some(index=>containers[currentPosition + index + width].classList.contains('taken'))){
+        present.forEach(index=>{
+            containers[index + currentPosition].classList.add('taken');
+            draw();
+        })
+        currentPosition = 4;
+        random  =   Math.floor(Math.random() * tetro.length);
+        present =   tetro[random][currentRotation];
+        draw();
+    }
+}
+
+
+// functions for moving tetro left, right & rotation 
 document.addEventListener('keydown',control);
 function control(e){
     if(e.keyCode == 37){
@@ -112,5 +128,7 @@ function moveLeft(){
     if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
         currentPosition += 1;
     }
+    freezeWhileMoving();
     draw();
 }
+
