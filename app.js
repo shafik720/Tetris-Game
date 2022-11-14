@@ -199,8 +199,23 @@ function rotationBug(p){
 
 //------------ mini display work
 let miniGrid = document.querySelector('.mini-grid'),
+displayWidth = 4,
 miniSquares = Array.from(miniGrid.querySelectorAll('div'))
 ;
-for(let i=0; i<miniSquares.length ; i++){
-    miniSquares[i].innerText = i;
+// for(let i=0; i<miniSquares.length ; i++){
+//     miniSquares[i].innerText = i;
+// }
+
+const miniTetro = [
+    [1, displayWidth + 1, displayWidth * 2 + 1, 2], // L tetromino
+    [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1], //Z tetromino
+    [1, displayWidth, displayWidth + 1, displayWidth + 2], // T tetromino
+    [0, 1, displayWidth, displayWidth + 1], // O tetromino
+    [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1] //iTetromino
+  ] 
+
+function miniDisplay(){
+    miniSquares.forEach(index=>index.classList.remove('blue'));
+    miniTetro[0].forEach(index=>miniSquares[index].classList.add('blue'));
 }
+miniDisplay();
