@@ -8,9 +8,9 @@ currentRotation = 0,
 currentPosition = 4
 ;
 
-// for(let i=0; i<containers.length ; i++){
-//     containers[i].innerText = i;
-// }
+for(let i=0; i<containers.length ; i++){
+    containers[i].innerText = i;
+}
 
 // lTetromino 
 const lTetromino = [
@@ -54,7 +54,7 @@ let present =   tetro[random][currentRotation];
 
 // function for drawing tetro in display
 function draw(){
-    present.some(index=>containers[index + currentPosition].classList.add('blue'));
+    present.forEach(index=>containers[index + currentPosition].classList.add('blue'));
 }
 
 // draw when the document is ready
@@ -62,7 +62,7 @@ draw();
 
 //function for undrawing tetro pieces so that it will prevent left piece on display
 function undraw(){
-    present.some(index=>containers[index + currentPosition].classList.remove('blue'));
+    present.forEach(index=>containers[index + currentPosition].classList.remove('blue'));
 }
 
 // setting interval to for moving down tetro pieces
@@ -73,9 +73,18 @@ function moveDown(){
     undraw();
     currentPosition += width;
     draw();
+    freeze();
 }
 
 // function for freezing the tetro pieces when it comes to the bottom edge
 function freeze(){
-    
+    if(present.some(index=>containers[currentPosition + index + width].classList.contains('taken'))){
+        present.forEach(index=>{
+            containers[index + currentPosition].classList.add('taken');
+        })
+        currentPosition = 4;
+        random  =   Math.floor(Math.random() * tetro.length);
+        present =   tetro[random][currentRotation];
+        draw();
+    }
 }
