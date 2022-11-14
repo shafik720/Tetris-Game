@@ -65,8 +65,6 @@ function undraw(){
     present.forEach(index=>containers[index + currentPosition].classList.remove('blue'));
 }
 
-// setting interval to for moving down tetro pieces
-timer = setInterval(moveDown,300);
 
 // function that has been used in time interval
 function moveDown(){
@@ -221,3 +219,15 @@ function miniDisplay(){
     miniTetro[nextRandom].forEach(index=>miniSquares[index].classList.add('blue'));
 }
 miniDisplay();
+
+
+// game pause start function
+function gamePause(){
+    if(timer){
+        clearInterval(timer);
+        timer = null;
+    }else{
+        // setting interval to for moving down tetro pieces
+        timer = setInterval(moveDown,300);
+    }
+}
