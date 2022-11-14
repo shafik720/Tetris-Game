@@ -8,9 +8,9 @@ currentRotation = 0,
 currentPosition = 4
 ;
 
-for(let i=0; i<containers.length ; i++){
-    containers[i].innerText = i;
-}
+// for(let i=0; i<containers.length ; i++){
+//     containers[i].innerText = i;
+// }
 
 // lTetromino 
 const lTetromino = [
@@ -87,4 +87,30 @@ function freeze(){
         present =   tetro[random][currentRotation];
         draw();
     }
+}
+
+document.addEventListener('keydown',control);
+function control(e){
+    if(e.keyCode == 37){
+        moveLeft();
+    }else if(e.keyCode == 38){
+        
+    }else if(e.keyCode == 39){
+        
+    }else if(e.keyCode == 40){
+        moveDown();
+    }
+}
+
+// function for moving tetro left
+function moveLeft(){
+    undraw();
+    let isLeft = present.some(index=>(index + currentPosition) % width == 0);
+    if(!isLeft){
+        currentPosition -= 1;
+    }
+    if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
+        currentPosition += 1;
+    }
+    draw();
 }
