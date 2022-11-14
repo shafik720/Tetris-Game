@@ -110,7 +110,7 @@ function control(e){
     if(e.keyCode == 37){
         moveLeft();
     }else if(e.keyCode == 38){
-        
+        rotation();
     }else if(e.keyCode == 39){
         moveRight();
     }else if(e.keyCode == 40){
@@ -143,5 +143,24 @@ function moveRight(){
         currentPosition -= 1;
     }
     freezeWhileMoving();
+    draw();
+}
+
+// function for rotating tetro
+function rotation(){
+    undraw();
+    currentRotation++;
+    if(currentRotation == present.length){
+        currentRotation = 0;
+    }
+    present =   tetro[random][currentRotation];
+    if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
+        if(currentRotation != 0){
+            --currentRotation;
+        }else if(currentRotation == 0){
+            currentRotation = 0;
+        }
+    }
+    present =   tetro[random][currentRotation];
     draw();
 }
