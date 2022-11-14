@@ -1,0 +1,11 @@
+
+
+.tetris-parent{
+    border: 1px solid black;
+    width : 200px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+.tetris-parent div{
+}
