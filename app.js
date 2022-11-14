@@ -68,8 +68,14 @@ function undraw(){
 // setting interval to for moving down tetro pieces
 timer = setInterval(moveDown,300);
 
+// function that has been used in time interval
 function moveDown(){
     undraw();
     currentPosition += width;
     draw();
+}
+
+// function for freezing the tetro pieces when it comes to the bottom edge
+function freeze(){
+    
 }
