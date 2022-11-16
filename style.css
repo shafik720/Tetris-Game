@@ -20,6 +20,10 @@
     box-sizing: unset;
     background-color: #d9abff;
     margin: 0 30px;
+    background: url(assets/img/bg.jpg) no-repeat;
+    background-position: center center ;
+    background-size: cover;
+    
 }
 .tetris-parent div{
     width: 20px;
@@ -27,7 +31,7 @@
 }
 
 .blue{
-    background-color: blue;
+    background-color: #FFBA01;
 }
 
 
@@ -93,4 +97,14 @@
 .score-number{
     font-size: 22px;
     color: crimson;
+}
+
+
+
+/* custom responsiveness for smaller screen  */
+@media only screen and (max-width:786px){
+    .tetro-div{
+        display: flex;
+        flex-direction: column;
+    }
 }
