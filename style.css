@@ -67,3 +67,19 @@
     font-weight: 700 !important;
     padding: 10px;
 }
+
+
+/* score div  */
+.score-div{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.score-div p{
+    font-weight: 600;
+    font-size: 18px;
+}
+.score-number{
+    font-size: 22px;
+    color: crimson;
+}
