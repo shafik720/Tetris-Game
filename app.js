@@ -75,6 +75,7 @@ function moveDown(){
     draw();
     freeze();
     gameScore();
+    gameOver();
 }
 
 // function for freezing the tetro pieces when it comes to the bottom edge
@@ -109,6 +110,7 @@ function freezeWhileMoving(){
 // for music 
 const moveSound = new Audio('assets/Audio/music2.mp3');
 const scoreSound = new Audio('assets/Audio/score2.mp3');
+const gameOverSound = new Audio('assets/Audio/gameOver.mp3');
 
 // functions for moving tetro left, right & rotation 
 document.addEventListener('keydown',control);
@@ -268,3 +270,9 @@ function gameScore(){
 }
 
 // game over functions 
+function gameOver(){
+    if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
+        clearInterval(timer);
+        gameOverSound.play();
+    }
+}
