@@ -1,5 +1,11 @@
 
 
+.header-text{
+    border: 3px solid crimson;
+    background: url(assets/img/header.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
 .tetris-parent{
     border: 3px solid #002c2b;
     width : 200px;
