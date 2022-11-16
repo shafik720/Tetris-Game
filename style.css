@@ -5,6 +5,11 @@
     background: url(assets/img/header.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tetris-parent{
     border: 3px solid #002c2b;
