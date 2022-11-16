@@ -1,6 +1,6 @@
 
 let grid = document.querySelector('.tetris-parent'),
-containers = Array.from(grid.querySelectorAll('div')),
+containers = Array.from(document.querySelectorAll('.tetris-parent div')),
 width = 10,
 timer,
 nextRandom = 0,
@@ -239,10 +239,16 @@ function gamePause(){
 
 // working on game score
 function gameScore(){
-    for(let i=0; i<199; i++){
+    for(let i=0; i<199; i+=width){
         let row = [i, i+1,  i+2,  i+3,  i+4,  i+5,  i+6,  i+7,  i+8,  i+9];
         if(row.every(index=>containers[index].classList.contains('taken'))){
-            console.log('ok');
+            row.forEach(index=>{
+                containers[index].classList.remove('taken');
+                containers[index].classList.remove('blue');
+            })
+            let removedLine = containers.splice(i, width);
+            containers = removedLine.concat(containers);
+            containers.forEach(index=>grid.appendChild(index));
         }
     }
 }
