@@ -1,19 +1,8 @@
 
 
-.header-text{
-    border: 3px solid crimson;
-    background: url(assets/img/header.jpg) no-repeat;
-    background-position: center center;
-    background-size: cover;
-    height: 60px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.tetris-parent{
+.tetris-parent {
     border: 3px solid #002c2b;
-    width : 200px;
+    width: 200px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
@@ -21,22 +10,27 @@
     background-color: #d9abff;
     margin: 0 30px;
     background: url(assets/img/bg.jpg) no-repeat;
-    background-position: center center ;
+    background-position: center center;
     background-size: cover;
-    
+    border-radius: 5px;
 }
-.tetris-parent div{
+
+.tetris-parent div {
     width: 20px;
     height: 20px;
 }
 
-.blue{
-    background-color: #FFBA01;
+.blue {
+    border-top: 5px solid #FFB56C;
+    border-right: 5px solid #DB852E;
+    border-bottom: 5px solid #DB852E;
+    border-left: 5px solid #FFB56C;
+    background-color: #FF9934;
 }
 
 
 /* for mini display */
-.mini-grid{
+.mini-grid {
     width: 80px;
     height: 80px;
     display: flex;
@@ -44,7 +38,7 @@
     box-sizing: unset;
 }
 
-.mini-grid div{
+.mini-grid div {
     width: 20px;
     height: 20px;
     margin: 0;
@@ -57,26 +51,30 @@
     outline
 } */
 
-.tetro-div{
+.tetro-div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-.side-divs{
+
+.side-divs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 20px;
 }
-.side-divs h5{
+
+.side-divs h5 {
     color: brown;
 }
-.side-divs button{
+
+.side-divs button {
     margin: 0;
 }
-.gamePauseBtn{
+
+.gamePauseBtn {
     width: 120px;
     border: 2px solid teal !important;
     font-weight: 700 !important;
@@ -85,16 +83,18 @@
 
 
 /* score div  */
-.score-div{
+.score-div {
     /* display: flex;
     justify-content: center;
     align-items: center; */
 }
-.score-div p{
+
+.score-div p {
     font-weight: 600;
     font-size: 18px;
 }
-.score-number{
+
+.score-number {
     font-size: 22px;
     color: crimson;
 }
@@ -102,8 +102,8 @@
 
 
 /* custom responsiveness for smaller screen  */
-@media only screen and (max-width:786px){
-    .tetro-div{
+@media only screen and (max-width:786px) {
+    .tetro-div {
         display: flex;
         flex-direction: column;
     }
