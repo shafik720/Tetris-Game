@@ -72,6 +72,7 @@ function moveDown(){
     currentPosition += width;
     draw();
     freeze();
+    gameScore();
 }
 
 // function for freezing the tetro pieces when it comes to the bottom edge
@@ -232,5 +233,16 @@ function gamePause(){
         // setting interval to for moving down tetro pieces
         timer = setInterval(moveDown,300);
         gameButton.innerText = 'Pause Game';
+    }
+}
+
+
+// working on game score
+function gameScore(){
+    for(let i=0; i<199; i++){
+        let row = [i, i+1,  i+2,  i+3,  i+4,  i+5,  i+6,  i+7,  i+8,  i+9];
+        if(row.every(index=>containers[index].classList.contains('taken'))){
+            console.log('ok');
+        }
     }
 }
