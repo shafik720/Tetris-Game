@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     box-sizing: unset;
     background-color: #d9abff;
+    margin: 0 30px;
 }
 .tetris-parent div{
     width: 20px;
