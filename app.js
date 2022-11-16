@@ -13,6 +13,7 @@ currentPosition = 4
 //     containers[i].innerText = i;
 // }
 
+
 // lTetromino 
 const lTetromino = [
     [1, width + 1, width * 2 + 1, 2],
@@ -105,18 +106,25 @@ function freezeWhileMoving(){
     }
 }
 
+// for music 
+const moveSound = new Audio('assets/Audio/music2.mp3');
+const scoreSound = new Audio('assets/Audio/score2.mp3');
 
 // functions for moving tetro left, right & rotation 
 document.addEventListener('keydown',control);
 function control(e){
     if(e.keyCode == 37){
         moveLeft();
+        moveSound.play();
     }else if(e.keyCode == 38){
         rotation();
+        moveSound.play();
     }else if(e.keyCode == 39){
         moveRight();
+        moveSound.play();
     }else if(e.keyCode == 40){
         moveDown();
+        moveSound.play();
     }
 }
 
@@ -238,6 +246,7 @@ function gamePause(){
 }
 
 let scoreNumber = document.querySelector('.score-number');
+
 // working on game score
 function gameScore(){
     for(let i=0; i<199; i+=width){
@@ -252,7 +261,10 @@ function gameScore(){
             containers.forEach(index=>grid.appendChild(index));
             
             score += 10;   
-            scoreNumber.innerText = score;         
+            scoreNumber.innerText = score;    
+            scoreSound.play();
         }
     }
 }
+
+// game over functions 
