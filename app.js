@@ -285,5 +285,6 @@ function gameOver(){
         clearInterval(timer);
         mainMusic.pause();
         gameOverSound.play();
+        document.querySelector('.gamePauseBtn').style.display = 'none';
     }
 }
