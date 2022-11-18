@@ -173,3 +173,16 @@ Game Control
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+
+
+/*------------------------------------ 
+game over display with pop up  
+-------------------------------------*/
+.popup-parent{
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
