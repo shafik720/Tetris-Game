@@ -114,4 +114,13 @@
         display: flex;
         flex-direction: column;
     }
+    .mini-grid {
+        order: 4;
+    }
+    .gamePauseBtn{
+        order: 2;
+    }
+    .side-divs h5{
+        order: 3;
+    }
 }
