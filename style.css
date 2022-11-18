@@ -137,6 +137,7 @@ Game Control
     border: 4px solid teal;
     margin-top: 15px;
     border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 .left-control span, .right-control span, .top-control span, .bottom-control span{
     font-size: 35px;    
