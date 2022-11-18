@@ -283,6 +283,7 @@ function gameScore(){
 function gameOver(){
     if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
         clearInterval(timer);
+        mainMusic.pause();
         gameOverSound.play();
     }
 }
