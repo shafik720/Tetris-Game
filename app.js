@@ -227,8 +227,8 @@ const miniTetro = [
   ] 
 
 function miniDisplay(){
-    miniSquares.forEach(index=>index.classList.remove('blue'));
-    miniTetro[nextRandom].forEach(index=>miniSquares[index].classList.add('blue'));
+    miniSquares.forEach(index=>index.classList.remove('blue-second'));
+    miniTetro[nextRandom].forEach(index=>miniSquares[index].classList.add('blue-second'));
 }
 miniDisplay();
 

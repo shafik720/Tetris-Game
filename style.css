@@ -1,7 +1,7 @@
 
 
 .tetris-parent {
-    border: 3px solid #002c2b;
+    border: 3px solid crimson;
     width: 200px;
     height: 400px;
     display: flex;
@@ -26,6 +26,13 @@
     border-bottom: 5px solid #DB852E;
     border-left: 5px solid #FFB56C;
     background-color: #FF9934;
+}
+.blue-second{
+    border-top: 5px solid #007ACC;
+    border-left: 5px solid #007ACC;
+    border-bottom: 5px solid darkblue;
+    border-right: 5px solid darkblue;
+    background-color: blue;
 }
 
 
