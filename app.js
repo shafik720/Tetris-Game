@@ -111,6 +111,7 @@ function freezeWhileMoving(){
 const moveSound = new Audio('assets/Audio/music2.mp3');
 const scoreSound = new Audio('assets/Audio/score2.mp3');
 const gameOverSound = new Audio('assets/Audio/gameOver.mp3');
+const mainMusic = new Audio('assets/Audio/body.mp3')
 
 // functions for moving tetro left, right & rotation 
 document.addEventListener('keydown',control);
@@ -127,6 +128,10 @@ function control(e){
         moveSound.play();
     }
 }
+
+document.querySelector('.bottom-control').addEventListener('click',()=>{
+    moveSound.play();    
+})
 
 // function for moving tetro left
 function moveLeft(){    
@@ -241,10 +246,13 @@ function gamePause(){
         clearInterval(timer);
         timer = null;
         gameButton.innerText = 'Start Game';
+        mainMusic.pause();
     }else{
         // setting interval to for moving down tetro pieces
         timer = setInterval(moveDown,600);
         gameButton.innerText = 'Pause Game';
+        mainMusic.play();
+        mainMusic.loop = true;
     }
 }
 
