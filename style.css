@@ -142,6 +142,9 @@ Game Control
 .left-control span, .right-control span, .top-control span, .bottom-control span{
     font-size: 35px;    
 }
+.controller span:hover{
+    color: crimson;
+}
 .left-control{
     position: absolute;
     left: 20%;
