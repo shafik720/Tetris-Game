@@ -242,7 +242,7 @@ function gamePause(){
         gameButton.innerText = 'Start Game';
     }else{
         // setting interval to for moving down tetro pieces
-        timer = setInterval(moveDown,300);
+        timer = setInterval(moveDown,600);
         gameButton.innerText = 'Pause Game';
     }
 }
