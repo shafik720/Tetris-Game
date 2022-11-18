@@ -280,11 +280,26 @@ function gameScore(){
 }
 
 // game over functions 
+let gameOverScore = document.querySelector('.gameOver-score');
+const popupParent = document.querySelector('.popup-parent');
 function gameOver(){
     if(present.some(index=>containers[index + currentPosition].classList.contains('taken'))){
         clearInterval(timer);
         mainMusic.pause();
         gameOverSound.play();
-        document.querySelector('.gamePauseBtn').style.display = 'none';
+        // document.querySelector('.gamePauseBtn').style.display = 'none';
+
+        // enabling pop up display
+        let gameScore = scoreNumber.innerText;
+        gameOverScore.innerText = gameScore;
+        popupParent.style.display = 'block';
     }
 }
+
+// play again button functionality
+const playAgain = document.querySelector('.playAgain');
+playAgain.addEventListener('click',()=>{
+    location.reload();
+})
+
+// showing game over score  with pop up 
