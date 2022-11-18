@@ -117,10 +117,8 @@ document.addEventListener('keydown',control);
 function control(e){
     if(e.keyCode == 37){
         moveLeft();
-        moveSound.play();
     }else if(e.keyCode == 38){
         rotation();
-        moveSound.play();
     }else if(e.keyCode == 39){
         moveRight();
         moveSound.play();
@@ -131,7 +129,8 @@ function control(e){
 }
 
 // function for moving tetro left
-function moveLeft(){
+function moveLeft(){    
+    moveSound.play();
     undraw();
     let isLeft = present.some(index=>(index + currentPosition) % width == 0);
     if(!isLeft){
@@ -146,6 +145,7 @@ function moveLeft(){
 
 // function for moving tetro right
 function moveRight(){
+    moveSound.play();
     undraw();
     let isRight = present.some(index=>(currentPosition + index + 1) % width === 0);
     if(!isRight){
@@ -160,6 +160,7 @@ function moveRight(){
 
 //---------------- function for rotating tetro
 function rotation(){
+    moveSound.play();
     undraw();
     currentRotation++;
     if(currentRotation == present.length){
