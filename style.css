@@ -1,4 +1,9 @@
 
+body{
+    background: url(assets/img/cropped-2400-1350-333860.png) no-repeat;
+    background-position: top right ;
+    background-size: cover;
+}
 
 .tetris-parent {
     border: 3px solid crimson;
